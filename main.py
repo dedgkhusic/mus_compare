@@ -5,7 +5,7 @@ import time
 def main():
     t_start = time.time()
 
-    user_id = 'dontcryitsarina'
+    user_id = '396334047'
     login, password = '+79888384971', 'aRV20050505'
     vk_session = vk_api.VkApi(login, password)
     vk_session.auth()
@@ -16,8 +16,11 @@ def main():
     print('загруженно')
     print(tracks)
 
-    for el in tracks:
-        print(el['id'], el['artist'], el['title'])
+
+    # for el in tracks:
+    #     m_tracks.append(el)
+    #     # print(el['id'], el['artist'], el['title'])
+
 
     t_end = time.time()
     print()

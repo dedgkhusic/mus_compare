@@ -5,8 +5,8 @@ import time
 
 def main():
     t_start = time.time()  # начало работы
-    user_id1 = '396334047'  # user1
-    user_id2 = '502662969'  # user2
+    user_id1 = '152062114'  # user1
+    user_id2 = '550033465'  # user2
 
     # авторизация
     login, password = '+79888384971', 'aRV20050505'
@@ -16,12 +16,12 @@ def main():
 
     # подгрузка всех записей в json
     vkaudio = VkAudio(vk_session)
-    tracks1 = vkaudio.get(user_id1)
+    tracks1 = list(vkaudio.get_iter(user_id1))
     print('download user1')
-    tracks2 = vkaudio.get(user_id2)
+    tracks2 = list(vkaudio.get_iter(user_id2))
     print('download user2')
-    # print(tracks1)
-    # print(tracks2)
+    # print(*tracks1)
+    # print(*tracks2)
     print()
 
     user1 = []
