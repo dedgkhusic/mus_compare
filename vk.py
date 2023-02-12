@@ -40,7 +40,6 @@ def main():
         if i in user2:
             per.append(i)
 
-
     print()
     print(len(per), end='\n')
     print(f"{(len(per) / len(user1)) * 100}% сопадений user1 c user2")
