@@ -5,11 +5,11 @@ import time
 
 def main():
     t_start = time.time()  # начало работы
-    user_id1 = '550033465'  # user1
-    user_id2 = '152062114'  # user2
+    user_id1 = '396334047'  # user1
+    user_id2 = '502662969'  # user2
 
     # авторизация
-    login, password = '+79891331486', 'AFsdqw12'
+    login, password = '+79888384971', 'aRV20050505'
     vk_session = vk_api.VkApi(login, password)
     vk_session.auth()
     print('authorization')
@@ -27,14 +27,14 @@ def main():
     user1 = []
     user2 = []
     for el in tracks1:
-        user1.append([el['artist'], el['title']])
+        user1.append([el['artist'], el['title'], el['duration']])
 
     for el in tracks2:
-        user2.append([el['artist'], el['title']])
+        user2.append([el['artist'], el['title'], el['duration']])
 
     per = []
     for i in user1:
-        if i in user2:
+        if i in user2 and i not in per:
             per.append(i)
 
     print()
@@ -44,10 +44,7 @@ def main():
     # print(per)
 
     for i in per:
-        print(i[1], '----', i[0])
-    # for el in tracks1:
-    #     if el['id'] in per:
-    #         print(f"artist: {el['artist']} -- title: {el['title']} -- id: {el['id']}")
+        print(i[1], '----', i[0], i[2])
 
     print()
 

@@ -4,8 +4,9 @@ import time
 
 def main():
     t_start = time.time()
-    user_id = 550033465
-    login, password = '+79891331486', 'AFsdqw12'
+
+    user_id = 'dontcryitsarina'
+    login, password = '+79888384971', 'aRV20050505'
     vk_session = vk_api.VkApi(login, password)
     vk_session.auth()
     print('вход')
