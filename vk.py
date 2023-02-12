@@ -31,9 +31,6 @@ def main():
         user2.append(el['id'])
 
     per = []
-    # print(user1)
-    # print(user2)
-
     for i in user1:
         if i in user2:
             per.append(i)
