@@ -5,8 +5,8 @@ import time
 
 def main():
     t_start = time.time()  # начало работы
-    user_id1 = '550033465'  # user1 я
-    user_id2 = '152062114'  # user2 алина
+    user_id1 = '550033465'  # user1
+    user_id2 = '152062114'  # user2
 
     # авторизация
     login, password = '+79891331486', 'AFsdqw12'
@@ -20,17 +20,17 @@ def main():
     print('download user1')
     tracks2 = vkaudio.get(user_id2)
     print('download user2')
-    print(tracks1)
-    print(tracks2)
+    # print(tracks1)
+    # print(tracks2)
     print()
 
     user1 = []
     user2 = []
     for el in tracks1:
-        user1.append(el['id'])
+        user1.append([el['artist'], el['title']])
 
     for el in tracks2:
-        user2.append(el['id'])
+        user2.append([el['artist'], el['title']])
 
     per = []
     for i in user1:
@@ -43,17 +43,13 @@ def main():
     print(f"{round((len(per) / len(user2)) * 100, 2)}% сопадений user2 c user1", end='\n\n')
     # print(per)
 
-    print()
-    for el in tracks1:
-        if el['id'] in per:
-            print(f"artist: {el['artist']} -- title: {el['title']} -- id: {el['id']}")
+    for i in per:
+        print(i[1], '----', i[0])
+    # for el in tracks1:
+    #     if el['id'] in per:
+    #         print(f"artist: {el['artist']} -- title: {el['title']} -- id: {el['id']}")
 
     print()
-    print()
-
-    for el in tracks2:
-        if el['id'] in per:
-            print(f"artist: {el['artist']} -- title: {el['title']} -- id: {el['id']}")
 
     t_end = time.time()
     print()
